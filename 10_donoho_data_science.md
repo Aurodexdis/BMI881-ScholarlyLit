@@ -1,0 +1,13 @@
+## *50 Years of Data Science* $-$ David Donoho
+
+### Summary:
+In his paper, David Donoho explores the evolution and potential of data science by examining past demand for reform in academic statistics, with a special emphasis on the work of Tukey, Chambers, Cleveland, and Breiman. Data exploration/preparation, data representation/transformation, computing with data, data modeling, visualization/presentation, and science about data science are the six categories into which the study suggests a framework for "Greater Data Science" (GDS). Donoho argues that although current data science programs place a strong emphasis on technological scaling and commercial applications, the field's true potential lies in creating scientific methods to enhance data analysis across all disciplines. He makes this claim by analyzing these elements and looking at current data science initiatives. The subsequent commentaries from various researchers largely support this vision while offering additional perspectives on implementation challenges in academic settings and industry.
+
+### Reaction:
+The paper's illustration of the ongoing tension between theoretical statistics and real-world data analysis, which has existed for over 50 years, was especially intriguing to me. A significant addition that felt a little understated in the main paper was the commentators' emphasis on repeatability and ethical issues in data science education. Reading about the Common Task Framework's contribution to machine learning advancements surprised me quite a bit; it appears to be an underappreciated strategy that could benefit other data science fields. I do have some reservations about Donoho's stark division between "Greater" and "Lesser" Data Science, though, as it may excessively alienate practitioners who are more concerned with immediate real-world applications.
+
+### Discussion Questions:
+1. Without lowering the importance of either discipline, how may educational institutions close the gap between established statistics departments and new data science programs? What structural adjustments would be required?
+2. The significance of ethical considerations and reproducibility in data science is emphasized in both the paper and the commentary. Without overburdening an already full curriculum, how may these be effectively integrated into data science education?
+3. Given the rapid expansion of data science tools and technologies, how can we create educational programs that balance teaching current practical skills with a focus on fundamental principles that will remain relevant over time?
+4. To promote comparable advancements in additional areas of data science, how may the Common Task Framework be modified and used in domains other than predictive modeling?
