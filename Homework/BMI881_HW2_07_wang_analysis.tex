@@ -1,0 +1,98 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{listings} % Added for code formatting
+
+\urlstyle{rm}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+
+\geometry{
+  top=1in,            % <-- you want to adjust this
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=3em,       % <-- and this
+  headsep=2em,          % <-- and this
+  footskip=3em,
+}
+
+% TO SHOW SOLUTIONS, include following (else comment out):
+\newenvironment{soln}{
+    \leavevmode\color{blue}\ignorespaces
+}{}
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{Hwk 2 - Wang et al. Skin Cancer Paper Further Analysis}}
+\rhead{\fancyplain{}{BMI 881 - Scholarly Literature}}
+\cfoot{\thepage}
+
+\title{\textsc{BMI 881 - Hwk 2 - Wang et al. Skin Cancer Paper Further Analysis}} % Title
+
+\author{
+Aurod Ounsinegad \\
+} 
+
+\date{November $26^{th}$, 2024}
+
+\begin{document}
+
+\maketitle 
+
+\begin{enumerate}
+    \item If a test has sensitivity = 80\% and specificity 80\% and the prevalence of the disease is 9/100,000, what is the positive predictive value (aka “precision”) of the test?\\
+    \begin{soln}
+        Using Bayes' Theorem for Positive Predictive Value (PPV):
+        
+        $$PPV = \frac{sensitivity \times prevalence}{sensitivity \times prevalence + (1-specificity) \times (1-prevalence)}$$
+        
+        Plugging in values:
+        $$\begin{aligned}
+            PPV &= \frac{0.8 \times 0.00009}{0.8 \times 0.00009 + 0.2 \times 0.99991} \\[2ex]
+            &= \frac{0.000072}{0.000072 + 0.199982} \\[2ex]
+            &= \frac{0.000072}{0.200054} \\[2ex]
+            &= 0.00036 \\[2ex]
+            &= 0.036\%
+        \end{aligned}$$
+    \end{soln}
+    \item Suppose sensitivity = specificity. What would they have to be to achieve positive predictive value = 50\% when prevalence is 9/100,000?\\
+    \begin{soln}
+        To find required sensitivity/specificity (let both = x) for PPV = 50\% with prevalence = 9/100,000:
+        
+        $$0.5 = \frac{x \times 0.00009}{x \times 0.00009 + (1-x) \times 0.99991}$$
+        
+        Multiply both sides by denominator:
+        $$\begin{aligned}
+        0.5(x \times 0.00009 + (1-x) \times 0.99991) &= x \times 0.00009 \\[2ex]
+        0.5x \times 0.00009 + 0.5(1-x) \times 0.99991 &= x \times 0.00009 \\[2ex]
+        0.5x \times 0.00009 + 0.5 \times 0.99991 - 0.5x \times 0.99991 &= x \times 0.00009 \\[2ex]
+        0.5 \times 0.99991 &= x \times 0.00009 + 0.5x \times 0.99991 - 0.00004 \\[2ex]
+        0.49996 &= x \times 0.99995 \\[2ex]
+        x &= \frac{0.49996}{0.99995} \\[2ex]
+        x &\approx 0.99991
+        \end{aligned}$$
+        
+        Therefore, sensitivity = specificity must be approximately 99.991\%.
+    \end{soln}
+    \item Comment on these results in relation to the precision values provided in Table 2 of Wang et al. (2019).\\
+    \begin{soln}
+        The precision values in Table 2 of Wang et al. (2019) range from 0.443 to 0.571, which are substantially higher compared to our calculated PPV of 0.036\%. This disparity can be accounted for by:
+        
+        \begin{enumerate}
+            \item Instead of using the standard prevalence of 9/100,000, the study employed a case-control design with an artificial 1:4 ratio of cases to controls.
+            \item Although machine learning research frequently uses this balanced dataset strategy for model building and validation, the reported precision levels do not accurately reflect real-world implementation conditions.
+            \item Unless sensitivity and specificity could reach near-perfect values ($>$99.991\%), the model's precision would probably be significantly closer to our calculated value of 0.036\% in an actual clinical application with true prevalence (9/100,000).
+        \end{enumerate}
+        
+        This analysis highlights a significant limitation: the high number of false positives compared to true positives, which results from the extremely low disease prevalence, would significantly restrict the model's clinical utility for population screening, even with encouraging performance metrics in the balanced study dataset.
+    \end{soln}
+\end{enumerate}
+
+\end{document}
